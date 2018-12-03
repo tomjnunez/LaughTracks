@@ -3,7 +3,12 @@ class Comedian < ActiveRecord::Base
 
   has_many :specials
 
-  def self.average_age
+  def self.avg_age
     average(:age).to_i
   end
+
+  def self.unique_cities
+  select(:city).distinct.map(&:city)
+  end
+
 end
