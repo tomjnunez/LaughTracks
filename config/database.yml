@@ -1,5 +1,5 @@
 # specify which database and adapter to use for which environment
-
+  
 development:
   adapter: postgresql
   database: laugh-tracks-development
@@ -11,4 +11,3 @@ test:
 production:
   adapter: postgresql
   database: laugh-tracks-production
-

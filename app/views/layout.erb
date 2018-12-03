@@ -1,7 +1,22 @@
-<head>
-  <title>Comedians</title>
-  <link rel="stylesheet" href="stylesheets/main.css" title="style" />
-</head>
-<body>
-  <%= yield %>
-</body>
+<html>
+  <head>
+    <link rel = "stylesheet" type = "text/css" href = "main.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  </head>
+  <body>
+    <header>
+      <a class="logo-link" href="/"><h1>Tim's Comedians</h1></a>
+      <nav id="main-nav">
+        <a class="nav-link" href="/comedians/new">Add Comedian</a>
+        <a class="nav-link" href="/comedians">Comedians</a>
+        <a class="nav-link" href="/">Home</a>
+      </nav>
+      <div class="clear-fix"> </div>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+
+    </footer>
+  </body>

@@ -1,21 +1,33 @@
 require File.expand_path('../../config/environment.rb', __FILE__)
 
-comedian = Comedian.create(name: "Tom Segura", age: 39, city: "Cincinnati")
+comedian_1 = Comedian.create(
+  name:"Tom Segura", age:39,
+  city: "Cincinnati", image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiMj4CQvYPfAhWOw4MKHbYCAtMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.abqjournal.com%2F1084324%2Ftom-segura-sees-himself-as-a-comedy-reporter.html&psig=AOvVaw3wQtirkdVyiUN82Ll7J238&ust=1543920202352021")
+special_1a = comedian_1.specials.create(
+  name:"Mostly Stories", length:60,
+  image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwja1MalvYPfAhVJ6oMKHQTbBUoQjRx6BAgBEAU&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt4970632%2F&psig=AOvVaw0b6ZC7N-V20ToadoeXL3Oq&ust=1543920237659133"
+)
+special_1b = comedian_1.specials.create(
+  name:"Disgraceful", length:60,
+  image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjwyKmyvYPfAhXk5YMKHYQmBRoQjRx6BAgBEAU&url=http%3A%2F%2Fthecomicscomic.com%2F2018%2F01%2F12%2Freview-tom-segura-disgraceful-on-netflix%2F&psig=AOvVaw2OFKieBXxN9oI0cflzbYHM&ust=1543920283307747"
+)
+special_1c = comedian_1.specials.create(
+  name:"Completely Normal", length:60,
+  image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiF_bPVvYPfAhWB7oMKHV8BBPsQjRx6BAgBEAU&url=http%3A%2F%2Fwww.peacemakerentertainment.com%2Frants%2F2014%2F7%2F31%2Fcomedy-bit-of-the-week-tom-segura-the-first-48&psig=AOvVaw025iewBl2zS_XHHPR8yIxJ&ust=1543920328398426"
+)
 
-special_1 = Special.create(comedian_id: comedian.id, name:"Completely Normal", runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiZ5r-16PbdAhWCn4MKHWxMA0oQjRx6BAgBEAU&url=https%3A%2F%2Fflixable.com%2Ftitle%2F70301023%2F&psig=AOvVaw2WEwc3C0qZc4oMRQsEQ-xQ&ust=1539087099060135"
-special_2 = Special.create(comedian_id: comedian.id, name:"Mostly Stories",runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwigjJrN6PbdAhUs04MKHRw2BQ4QjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.com%2FMostly-Stories-Tom-Segura%2Fdp%2FB06XTZ4WTN&psig=AOvVaw2nZq5EkG2Ikkxu65KwIgmv&ust=1539087158920359"
-special_3 = Special.create(comedian_id: comedian.id, name:"Disgraceful", runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj8jsfY6PbdAhVF34MKHV6vBvMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.com%2FDisgraceful-Tom-Segura%2Fdp%2FB07FLGS6SL&psig=AOvVaw3WPUhDLS26z9-zhzIj0PV6&ust=1539087181943543"
-puts "Created #{comedian.name}"
-
-comedian = Comedian.create(name: "Kevin Hart", age: 49, city: "Philadelphia")
-
-special_1 = Special.create(comedian_id: comedian.id, name:"What Now?", runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj69Jvn6PbdAhVr6oMKHUY1AIoQjRx6BAgBEAU&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt4669186%2Fmediaviewer%2Frm1385693952&psig=AOvVaw0xG8JiyeKq4UUbULc_wDaN&ust=1539087207434611"
-special_2 = Special.create(comedian_id: comedian.id, name:"Seriously Funny",runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiFzs3w6PbdAhVozIMKHYJIBpYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.com%2FSeriously-Funny-Kevin-Hart%2Fdp%2FB003ODL08G&psig=AOvVaw3osOja4qOVhQSi9Txftf_K&ust=1539087232777756"
-special_3 = Special.create(comedian_id: comedian.id, name:"Let me Explain", runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjAs4r86PbdAhUm5YMKHazADEAQjRx6BAgBEAU&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKevin_Hart%3A_Let_Me_Explain&psig=AOvVaw2n2rsQED9piuBfLT6_MTb-&ust=1539087255788890"
-puts "Created #{comedian.name}"
-
-comedian = Comedian.create(name: "Dave Chapelle", age: 45, city: "Washington D.C")
-
-special_1 = Special.create(comedian_id: comedian.id, name:"Dave Chappelle: Equanimity", runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwisspKM6fbdAhWI6YMKHeBQDfsQjRx6BAgBEAU&url=https%3A%2F%2Fletterboxd.com%2Ffilm%2Fdave-chappelle-equanimity%2Fgenres%2F&psig=AOvVaw04Z__mrCmTvaST-VZoj3mR&ust=1539087284604831"
-special_2 = Special.create(comedian_id: comedian.id, name:"Dave Chappelle: The Bird Revelation", runtime: 60, thumbnail: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwigofiZ6fbdAhVk_IMKHQjIAa0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt7807000%2F&psig=AOvVaw16vlwz_jHo-8ujL-p6f488&ust=1539087315660357"
-puts "Created #{comedian.name}"
+comedian_2 = Comedian.create(
+  name:"Kevin Hart", age:39,
+  city: "Philadelphia", image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjA6KyAvoPfAhUIqoMKHe-BDpYQjRx6BAgBEAU&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKevin_Hart&psig=AOvVaw2SwS5d0cSJiss-8LedriT1&ust=1543920443606773")
+special_2a = comedian_2.specials.create(
+  name:'Seriously Funny', length:60,
+  image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwip0MGZvoPfAhXtq4MKHf1bBSsQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F140174607125638549%2F&psig=AOvVaw1eewWjNHOuEgVbG2Kai5zt&ust=1543920482292462"
+)
+special_2b = comedian_2.specials.create(
+  name:'Laugh at My Pain', length:60,
+  image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiGm9atvoPfAhVixYMKHfSVB9MQjRx6BAgBEAU&url=https%3A%2F%2Fgenius.com%2Falbums%2FKevin-hart%2FKevin-hart-laugh-at-my-pain&psig=AOvVaw0JIhs9BDDPsm11jJaZwTgO&ust=1543920540072269"
+)
+special_2c = comedian_2.specials.create(
+  name:'Let Me Explain', length:60,
+  image_url:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjiuYLFvoPfAhXSrIMKHcuwB4cQjRx6BAgBEAU&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKevin_Hart%3A_Let_Me_Explain&psig=AOvVaw32XNki5REYcCQKQukvGN5x&ust=1543920589139239"
+)
